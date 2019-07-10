@@ -11,9 +11,9 @@
                     <div class="microthumb-border"></div>
                 </div>
                 <div class="thumb">
-                    <a href="{{video.url}}" {% unless video.data.youtube %}style="pointer-events: none;"{% endunless %}>
+                    <a href="../{{video.outputPath}}" {% unless video.data.youtube %}style="pointer-events: none;"{% endunless %}>
                         {% if video.data.image %}
-                            <img src="/static/img/{{video.data.image}}">
+                            <img src="static/img/{{video.data.image}}">
                         {% else if video.data.youtube %}
                             <img src="http://i3.ytimg.com/vi/{{video.data.youtube}}/hqdefault.jpg">
                         {% endif %}
