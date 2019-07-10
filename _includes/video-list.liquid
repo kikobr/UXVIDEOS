@@ -1,0 +1,51 @@
+<div class="mozaique">
+
+    {% for video in collections.videos %}
+        <div class="thumb-block  tbm-init-ok">
+            <div class="thumb-inside">
+                {% if video.data.youtube %}
+                    <span class="video-hd-mark">HD</span>
+                {% endif %}
+                <div class="microthumb">
+                    <div class="microthumb-thumb" style="background-position:0% 0%"></div>
+                    <div class="microthumb-border"></div>
+                </div>
+                <div class="thumb">
+                    <a href="{{video.url}}" {% unless video.data.youtube %}style="pointer-events: none;"{% endunless %}>
+                        {% if video.data.image %}
+                            <img src="/static/img/{{video.data.image}}">
+                        {% else if video.data.youtube %}
+                            <img src="http://i3.ytimg.com/vi/{{video.data.youtube}}/hqdefault.jpg">
+                        {% endif %}
+                    </a>
+                </div>
+                <button class="action-menu" style="display: none; opacity: 1;">
+                    <span class="open icon-f icf-ellipsis-v"></span>
+                    <span class="close icon-f icf-close-thin"></span>
+                </button>
+            </div>
+            <div class="thumb-under">
+                <p class="title">
+                    <a href="{{video.url}}" title="{{video.data.title}}">{{video.data.title}}</a>
+                </p>
+                <p class="metadata">
+                    <span class="bg">
+                        <span class="duration">{{video.data.duration}}</span>
+                        <a href="#">
+                            <span class="name">{{video.data.channel}}</span>
+                            <span class="icon-f icf-check-circle"
+                                title="Verified uploader">
+                            </span>
+                        </a>
+                        <span>
+                            <span class="sprfluous"> - </span>
+                             {{video.data.views}}
+                             <span class="sprfluous">Views</span>
+                         </span>
+                         <span class="sprfluous"> - </span>
+                     </span>
+                 </p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

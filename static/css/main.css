@@ -1,0 +1,54 @@
+/*@font-face {
+    font-family: "iconfont";
+    src: url("/static/iconfont.woff");
+}*/
+
+@font-face {
+    font-family: iconfont;
+    src: url(iconfont.woff);
+    /* src: url(../../../../v-01318270519/v3/fonts/skins/common/iconfont/iconfont.eot?itvls8#iefix) format('embedded-opentype'), url(../../../../v-01318270519/v3/fonts/skins/common/iconfont/iconfont.woff2?itvls8) format('woff2'), url(../../../../v-01318270519/v3/fonts/skins/common/iconfont/iconfont.ttf?itvls8) format('truetype'), url(../../../../v-01318270519/v3/fonts/skins/common/iconfont/iconfont.woff?itvls8) format('woff'), url(../../../../v-01318270519/v3/fonts/skins/common/iconfont/iconfont.svg?29xult#itvls8) format('svg'); */
+    font-weight: 400;
+    font-style: normal
+}
+
+@media (max-width: 767px) {
+    #page #nav.opened, body.mobile-menu-opened #page #nav.opened {
+        display: none !important;
+    }
+
+    #site-logo-link {
+        max-width: 100% !important;
+    }
+
+    #header-menu-toggle,
+    #header-mobile-search-toggle,
+    .header-icons {
+        display: none !important;
+    }
+
+    #home-tabs li {
+        min-width: 100px;
+    }
+}
+
+#header-menu-toggle {
+    display: none;
+}
+
+.thumb>a {
+    max-height: 100%;
+}
+
+.thumb>a>img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.thumb-inside > .video-hd-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9;
+}

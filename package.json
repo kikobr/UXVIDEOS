@@ -1,0 +1,16 @@
+{
+  "name": "research-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "eleventy --input=. --output=docs",
+    "dev": "eleventy --serve --input=. --output=docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1"
+  }
+}

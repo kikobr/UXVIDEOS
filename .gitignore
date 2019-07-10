@@ -1,0 +1,5 @@
+package-lock.json
+node_modules/
+_public/
+_site/
+.git/

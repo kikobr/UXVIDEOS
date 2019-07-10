@@ -1,0 +1,176 @@
+---
+title: Home
+permalink: /
+---
+
+<!DOCTYPE html>
+<html class="xv-responsive notouch" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Free UX Videos - UXVIDEOS.COM</title>
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        <meta name="theme-color" content="#000000">
+        <link rel="stylesheet" href="/static/css/front.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+    </head>
+    <body class="home">
+        <div id="page">
+            {% include header %}
+
+    		<div id="main">
+    			<div id="home-tabs" class="xv-tabs ">
+    				<ul class="tab-buttons tab-6-buttons">
+    					<li class="hide-if-premium">
+                            <a class="btn btn-default home active" href="/">
+                                HOME
+                            </a>
+                        </li>
+    					<li class="mobile-hide" id="home-tabs-nbr-videos"><a href="/"><span class="icon-f icf-play-square-o"></span> {{ collections.videos.length }} videos</a></li>
+    				</ul>
+    			</div>
+    			<div id="content">
+
+    				{% include video-list %}
+    				<!-- <div class="pagination ">
+    					<ul>
+    						<li><a href="">2</a></li>
+    						<li><a href="">3</a></li>
+    						<li><a href="">4</a></li>
+    						<li><a href="">5</a></li>
+    						<li><a href="">6</a></li>
+    						<li><a href="" class="no-page next-page">Next</a></li>
+    					</ul>
+    				</div> -->
+    			</div>
+    		</div>
+
+            {% include footer %}
+    	</div>
+
+
+
+
+        <div id="page" style="display: none;">
+            <div id="header">
+                <header>
+                    <div class="stripe white-stripe">
+                        <!-- <div class="header-icons">
+                            <a href="#" class="icon theme-light red-bg" id="theme-switcher-btn" title="Switch to dark theme"></a>
+                            <a href="#" id="mobile-login-btn" class="icon user-login-big mobile-show-inline-block"></a> <a href="#" target="_blank" title="XML RSS feed" class="icon rss-w red-bg mobile-hide"></a>
+                            <a href="#" target="_blank" title="UXVideos on Twitter" class="icon twitter-w red-bg mobile-hide"></a>
+                            <a id="language-switcher"><span class="flag flag-gb" title="English"></span></a>
+                        </div> -->
+                        <a href="#" class="icon hamburger mobile-show" id="header-mobile-menu-toggle" title="Toggle menu"></a> <a href="#" class="icon filters mobile-show" id="header-mobile-filters-toggle" title="Toggle filters"></a> <a href="#" class="icon search mobile-show"
+                            id="header-mobile-search-toggle" title="Toggle search"></a>
+                        <a href="#" class="logo"><img src="/img/uxvideos.png" alt="UXVideos Home" title="UXVideos Home" id="site-logo" class="no-blur"></a>
+                        <h1 class="hidden">UXVIDEOS.COM</h1>
+                        <form action="#" id="xv-search-form" class="mobile-hide">
+                            <div><input type="text" name="k" value="" class="search-input" maxlength="2048" autocomplete="off"><input type="submit" value="Search" class="search-submit"></div>
+                        </form>
+                        <h2 class="mobile-hide">THE BEST <span class="text-danger">FREE UX VIDEOS</span> SITE</h2>
+                    </div>
+                    <h2 id="mobile-slogan" class="mobile-show">THE BEST <span class="text-danger">FREE UX VIDEOS</span> SITE</h2>
+
+                    <div id="mobile-filters-menu" class="mobile-hide mobile-menu">
+                        <div class="stripe black-stripe secondary-menu">
+                            <p class="mobile-hide">
+                                <a href="#" class="login-icon-link my-subs-nav-link" title="My subscriptions"></span></a>
+                                <a href="#" class="login-icon-link" title="Videos I like"></a>
+                                <a href="#" class="login-icon-link menu-login-acct"></a>
+                            </p>
+                            <ul>
+                                <li><a href="#"><strong>Best Videos</strong></a></li>
+                                <li class="mobile-hide">||</li>
+                                <li><a href="#">Real Amateur Designers Videos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div id="main">
+                <div class="mobile-hide">
+                    <div class="main-categories">
+                        <ul>
+                            <li class="mobile-hide"><a class="btn btn-default label">Categories</a></li>
+                            {% for col in collections.all %}
+                                {% if col.url contains "video" %}
+                                    <li data-tag="{{col.data.tags.0}}"><a href="#" class="btn btn-default" href="{{col.url}}">{{col.data.tags.0}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            <li class="mobile-show"><a href="#tags" class="btn btn-default">+</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="home-tabs" class="xv-tabs not-logged">
+                    <ul class="tab-buttons">
+                        <li><a class="btn btn-default home active"> HOME</a></li>
+                        <li><a class="btn btn-default mysubs" href="#" title="My subscriptions"><span class="label"> My subscriptions</span></a></li>
+                        <li><a class="btn btn-default videosilike" href="#" title="Videos I like"><span class="label"> Videos I like</span></a></li>
+                    </ul>
+                    <div class="stripe"><span class="pull-right"><a href="#">{{collections.length}}40 videos &gt;</a></span></div>
+                </div>
+                <div id="content">
+                    <div class="mozaique thumbs-4">
+                        {% for col in collections.all %}
+                            {% if col.url contains "video" %}
+                                <div class="thumb-block ">
+                                    <div class="thumb-inside">
+                                        <div class="thumb">
+                                            <a href="{{col.url}}">
+                                                <img src="/img/{{col.data.image}}">
+                                            </a>
+                                        </div>
+                                        <span class="video-hd-mark">HD</span>
+                                    </div>
+                                    <p><a href="#">{{col.data.title}}</a></p>
+                                    <p class="metadata">
+                                        <span class="bg">
+                                            <strong>{{col.data.duration}}</strong> -
+                                            <span class="mobile-hide">{{col.data.views}} - </span>
+                                            <a href="#">{{col.data.channel}}</a>
+                                        </span>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                    <!-- <div class="pagination ">
+                        <ul>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">9</a></li>
+                            <li><a href="#">10</a></li>
+                            <li><a href="#">11</a></li>
+                            <li><a href="#">12</a></li>
+                            <li><a href="#">13</a></li>
+                            <li><a href="#">14</a></li>
+                            <li><a href="#">15</a></li>
+                            <li><a href="#">16</a></li>
+                            <li><a href="#">17</a></li>
+                            <li><a href="#">18</a></li>
+                            <li><a href="#">19</a></li>
+                            <li><a href="#">20</a></li>
+                            <li><a href="#">21</a></li>
+                            <li><a href="#" class="no-page">Next</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+
+            {% include footer %}
+        </div>
+
+
+    </body>
+
+
+</html>

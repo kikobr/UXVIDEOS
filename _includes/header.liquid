@@ -1,0 +1,70 @@
+<div id="header">
+    <header>
+        <div class="stripe white-stripe">
+            <h1 class="hidden">UXVIDEOS.COM</h1>
+            <div class="header-icons" id="header-mobile-right">
+
+                <a href="#" id="mobile-login-btn" class="btn btn-default mobile-show-inline-block"><span class="icon user logo-bg mobile-show-inline-block">&nbsp;</span><span class="mobile-hide">ACCOUNT</span></a><a
+                    href="https://github.com/kikobr/UXVIDEOS" target="_blank" class="btn btn-default menu-login-acct mobile-hide" data-mode="signup">Suggest a HOT UXVIDEO</a>
+            </div>
+            <a href="#" class="animated-hamburger opened init-ok" id="header-menu-toggle" title="Toggle menu">
+                <span class="an-h-1"></span>
+                <span class="an-h-2"></span>
+                <span class="an-h-3"></span>
+                <span class="an-h-4"></span>
+            </a>
+            <a href="#" class="icon-f icf-search mobile-show" id="header-mobile-search-toggle" title="Toggle search"></a>
+            <a href="/" class="logo" id="site-logo-link">
+                <image src="/static/img/uxvideos.png" title="UXVideos Home" height="36" width="144"
+                        class="no-blur" id="site-logo"></image>
+            </a>
+
+            <form action="/" id="xv-search-form" class="mobile-hide">
+                <div class="cont">
+                    <div class="input-group">
+                        <input type="text" name="k" class="search-input form-control" maxlength="2048" placeholder="Search {{ collections.videos.length }} videos"><span class="input-group-btn"><button type="submit" title="Search"
+                                class="search-submit btn btn-default"><span class="icon-f icf-search"></span><span class="mobile-show-inline-block">Search</span></button></span>
+                    </div>
+                </div>
+            </form>
+            <h2 class="mobile-hide"> THE BEST <span class="text-danger">FREE UX VIDEOS</span> SITE </h2>
+        </div>
+        <h2 id="mobile-slogan" class="mobile-show">THE BEST <span class="text-danger">FREE UX VIDEOS</span> SITE </h2>
+    </header>
+</div>
+<div id="nav" class="forced-opened opened">
+    <nav>
+        <div class="main-categories ordered-label-list">
+            <ul>
+                <li class="mobile-show"><a class="btn btn-default label main  " id="main-cat-sub-list-btn">Categories</a></li>
+                <li><a class="btn btn-default label red-label" href="#">Best Videos</a></li>
+                <li><a class="btn btn-default label red-label" href="#">Real Amateur Designers Videos</a></li>
+                <!-- <li><a class="btn btn-default label red-label" href="#">Channels</a></li>
+                <li><a class="btn btn-default label red-label" href="#">Profiles</a></li> -->
+                <li class="sub-list  " id="main-cat-sub-list">
+                    <ul>
+                        {% for tag in collections.tagList %}
+                            <li class="dyn">
+                                <a href="#" class="btn btn-default">
+                                    {{tag}}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a class="btn btn-default" href="#">All tags</a></li>
+                <li class="mobile-hide"><a class="view-more btn btn-default">+</a></li>
+                <li id="last-main-cats-visited" class="ordered-label-list"></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="mobile-login-menu" class="hidden"><a href="#" class="btn btn-default menu-login-acct" data-mode="signup">Join for FREE</a><a href="#" class="btn btn-default menu-login-acct" data-mode="signin">Log in</a><a
+        href="" class="btn btn-default my-subs-nav-link">My subscriptions</a><a href="" class="btn btn-default">UX Videos I like</a></div>
+<a href="#" id="x-x-messages-btn" class="x-x-messages-btn-0">
+    <span class="ic">
+        <span class="icon-f icf-info-circle" title="Messages from UXvideos.com"></span>
+        <span class="icon-f icf-close" title="Close"></span>
+    </span>
+    <span class="badge">0</span>
+</a>
